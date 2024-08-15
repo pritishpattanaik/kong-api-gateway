@@ -60,7 +60,7 @@ Setup and installation is divided into two Part.
     admin UI to manage the kong entrities.
 
 
-     <img width="667" alt="image" src="https://github.com/user-attachments/assets/5148256d-da13-46fa-a84c-27e4cf62ee09">
+     <img width="660" alt="image" src="https://github.com/user-attachments/assets/5148256d-da13-46fa-a84c-27e4cf62ee09">
 
 
     ### Hybrid mode
@@ -70,7 +70,7 @@ Setup and installation is divided into two Part.
 
     In this mode, Kong nodes in a cluster are split into two roles: control plane (CP), where configuration is managed and the Admin API is served from; and data plane (DP), which serves traffic     for the proxy. Each DP node is connected to one of the CP nodes, and only the CP nodes are directly connected to a database.
 
-    <img width="924" alt="image" src="https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673">
+    <img width="660" alt="image" src="https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673">
 
 4. Lab Setup
 
@@ -79,7 +79,7 @@ Setup and installation is divided into two Part.
   
 5. Kong Gateway Overview
 
-   <img width="683" alt="image" src="https://github.com/user-attachments/assets/a7670380-db66-4ccc-8e12-295863d32027">
+   <img width="660" alt="image" src="https://github.com/user-attachments/assets/a7670380-db66-4ccc-8e12-295863d32027">
 
 
 
