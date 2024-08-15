@@ -1,22 +1,22 @@
-# kong-api-gateway
+# Kong API Gateway - Practice Lab 
+
 This is Kong API Gateway OSS tutorial to install and configure with docker. 
 
-# Course Outline 
 
 
-# Introduction 
+## Introduction 
 
 In this tutorial, we will walk through with several installation options and deployment topology. Kong Gateway is a low-demand, high-performing API gateway. You can set up Kong Gateway with  it  various self-managed systems. This training course designed to learn Kong Gateway.
 
 Through a series of modules and lab exercises, the fundamental and advance concepts of Kong Gateway will be presented and put into practice by managing Kong Gateway, designing an API, and exposing the API through Kong Gateway. This course balances lecture, hands-on exercise
 
-# Setup instruction Guide 
+## Setup instruction Guide 
 
 There are several prerequisites that are needed prior to running Kong Gateway on your local laptop/workstation. These are outlined below (with links to external web sites).
 
 Setup and installation is divided into two Part. 
 
-1. First install all the required tools
+1. Prerequesties and required tools. 
    
     • Install docker community edition - https://docs.docker.com/engine/install/
    
@@ -29,17 +29,16 @@ Setup and installation is divided into two Part.
     • Install postman or insomnia -   https://www.postman.com/downloads/ https://insomnia.rest/download
    
 
-3. Install Kong 
-
    We use Docker as local containerized applications hence we will use docker to pull kong images in every mode.
 
-4. Kong Deployment topology
+3. Kong Deployment topology
 
    Kong Gateway can be deployed in four different modes:
 
-    •	Hybrid
+    
+    • DB-less and declarative
     •	Traditional (database)
-    •	DB-less and declarative
+    • Hybrid
     •	Kong Konnect 
  
 
@@ -73,7 +72,13 @@ Setup and installation is divided into two Part.
 
     <img width="924" alt="image" src="https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673">
 
-5. Lab Setup 
+4. Lab Setup
+
+   1.  run setup.sh to start kong in different mode, currenly it supports dbless, db, and hybrid
+   2.  this script will use docker-compose.yaml file and pull latest image from the hub.  
+   
+
+   
     
 
 
