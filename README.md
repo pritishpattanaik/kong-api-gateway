@@ -75,7 +75,23 @@ Setup and installation is divided into two Part.
 4. Lab Setup
 
    1.  run setup.sh to start kong in different mode, currenly it supports dbless, db, and hybrid
-   2.  this script will use docker-compose.yaml file and pull latest image from the hub.  
+   2.  this script will use docker-compose.yaml file and pull latest image from the hub.
+  
+5. Kong Gateway Overview
+
+   <img width="683" alt="image" src="https://github.com/user-attachments/assets/a7670380-db66-4ccc-8e12-295863d32027">
+
+
+
+    • what is client ?
+
+    • what is service ?
+
+    • what is route ?
+
+    • what is plugin ?
+
+    • what is upstream ?
    
 
    
