@@ -1,128 +1,115 @@
 # Kong API Gateway - Practice Lab 
 
-This is Kong API Gateway OSS tutorial to install and configure with docker. 
+This is a Kong API Gateway OSS tutorial to install and configure with Docker.
 
-
-### 6. **Quick Access Links**
-
-Add a table of contents at the beginning:
-
-```markdown
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Prerequesties](#Prerequesties)
-3. [Deployment Topology](#Deployment Topology)
+2. [Prerequisites](#prerequisites)
+3. [Deployment Topology](#deployment-topology)
 4. [Deployment Modes](#deployment-modes)
-5. [Lab Setup](#Lab Setup)
-6. [Kong Overview](#Kong Overview)
-
+5. [Lab Setup](#lab-setup)
+6. [Kong Overview](#kong-overview)
 
 ## Introduction 
 
-In this tutorial, we will walk through with several installation options and deployment topology. Kong Gateway is a low-demand, high-performing API gateway. You can set up Kong Gateway with  it  various self-managed systems. This training course designed to learn Kong Gateway.
+Welcome to the Kong API Gateway Practice Lab! In this tutorial, we'll guide you through various installation options and deployment topologies of Kong Gateway, a lightweight yet powerful API gateway.
 
-Through a series of modules and lab exercises, the fundamental and advance concepts of Kong Gateway will be presented and put into practice by managing Kong Gateway, designing an API, and exposing the API through Kong Gateway. This course balances lecture, hands-on exercise
+Kong Gateway is known for its high performance and low resource demands, making it ideal for managing API traffic across different environments. This course is designed to provide hands-on experience with Kong, from installation to configuring and managing API gateways.
 
-## Prerequesties 
+Throughout this training, you'll learn:
 
-There are several prerequisites that are needed prior to running Kong Gateway on your local laptop/workstation. These are outlined below (with links to external web sites).
+- How to install and configure Kong Gateway using Docker.
+- Different deployment modes (DB-less, Traditional, Hybrid).
+- How to manage and secure your APIs using Kong.
 
-Setup and installation is divided into two Part. 
+Let's get started!
 
-1. Prerequesties and required tools. 
-   
-    • Install docker community edition - https://docs.docker.com/engine/install/
-   
-    • Install cURL - https://everything.curl.dev/get
-   
-    • Install httpie https://httpie.io/docs/cli/installation
-   
-    • Install deck https://docs.konghq.com/deck/latest/installation/
-   
-    • Install postman or insomnia -   https://www.postman.com/downloads/ https://insomnia.rest/download
-   
+## Prerequisites 
 
-   We use Docker as local containerized applications hence we will use docker to pull kong images in every mode.
+Before starting, ensure your environment meets the following prerequisites:
+
+1. **Docker Community Edition**
+   - Install Docker on your system: [Docker Installation Guide](https://docs.docker.com/engine/install/)
+   
+2. **cURL**
+   - Command-line tool for transferring data: [cURL Installation Guide](https://everything.curl.dev/get)
+   
+3. **HTTPie**
+   - A user-friendly HTTP client: [HTTPie Installation Guide](https://httpie.io/docs/cli/installation)
+   
+4. **deck**
+   - Declarative configuration management tool for Kong: [deck Installation Guide](https://docs.konghq.com/deck/latest/installation/)
+   
+5. **Postman or Insomnia**
+   - API testing tools: [Postman](https://www.postman.com/downloads/) or [Insomnia](https://insomnia.rest/download)
+
+We will use Docker to pull Kong images for various deployment modes throughout this lab.
 
 ## Deployment Topology
 
-   Kong Gateway can be deployed in four different modes:
+Kong Gateway can be deployed in several modes, each suited for different environments and use cases:
 
-    
-    • DB-less and declarative
-    •	Traditional (database)
-    • Hybrid
-    •	Kong Konnect 
- 
+- **DB-less and Declarative**
+- **Traditional (Database)**
+- **Hybrid**
+- **Kong Konnect**
 
-    Each mode has benefits and limitations, so it is important to consider them carefully when deciding which mode to use to install Kong Gateway in production.
+Each mode has its own benefits and limitations. Choose the mode that best fits your production needs.
 
-    The following sections briefly describe each mode.
+### Deployment Modes Overview
+| Mode            | Description                                 | Use Case                                |
+|-----------------|---------------------------------------------|-----------------------------------------|
+| **DB-less**     | Configuration via declarative file, no database needed | Simple setups, testing, or small-scale  |
+| **Traditional** | Requires a database to store configurations | High scalability and enterprise environments |
+| **Hybrid**      | Control plane and data plane separation     | Large, distributed environments         |
+| **Kong Konnect**| Managed service for multi-cloud environments| Enterprise-level services               |
 
-    ## Deployment Modes Comparison
+## Deployment Modes
 
-   | Mode              | Description                                 | Use Case                                |
-   |-------------------|---------------------------------------------|-----------------------------------------|
-   | **dbless**        | All services on one node                    | Simple setups, testing, or small-scale  |
-   | **traditional**   | Powered by Database and mutiple nodes       | Scalability                             |
-   | **Hybrid**        | Control plane and data plane separation     | Large, distributed environments         |
+<details>
+  <summary>DB-less Mode</summary>
 
+  ![DB-less Mode](path_to_image.png)
+  
+  In DB-less mode, configuration is provided through a declarative file in YAML or JSON format. This mode is ideal for simple setups where a database is unnecessary.
+</details>
 
-    ### DB-less mode
+<details>
+  <summary>Traditional Mode</summary>
 
-    <img width="660" alt="image" src="https://github.com/user-attachments/assets/31fbdd56-4206-4eac-ab5d-23223f6dc442">
+  ![Traditional Mode](path_to_image.png)
+  
+  In Traditional mode, Kong Gateway requires a database to store configured entities like routes, services, and plugins. PostgreSQL 10+ is supported.
+</details>
 
-    When running in DB-less mode, configuration is provided to Kong Gateway using a second file. This file contains your configuration in YAML or JSON format using Kong’s declarative   
-    configuration syntax.
+<details>
+  <summary>Hybrid Mode</summary>
 
-
-    ### Traditional mode
-
-    In traditional mode, Kong Gateway requires a database to store configured entities such as routes, services, and plugins. Kong Gateway supports PostgreSQL 10+. you will get kong manger an 
-    admin UI to manage the kong entrities.
-
-
-     <img width="660" alt="image" src="https://github.com/user-attachments/assets/5148256d-da13-46fa-a84c-27e4cf62ee09">
-
-
-    ### Hybrid mode
-
-    Traditionally, Kong has always required a database, to store configured entities such as routes, services, and plugins. Hybrid mode, also known as control plane / data plane separation 
-    (CP/DP), removes the need for a database on every node.
-
-    In this mode, Kong nodes in a cluster are split into two roles: control plane (CP), where configuration is managed and the Admin API is served from; and data plane (DP), which serves traffic     for the proxy. Each DP node is connected to one of the CP nodes, and only the CP nodes are directly connected to a database.
-
-    <img width="660" alt="image" src="https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673">
+  ![Hybrid Mode](path_to_image.png)
+  
+  Hybrid mode separates the control plane and data plane, allowing distributed deployments without the need for a database on every node.
+</details>
 
 ## Lab Setup
 
-   1.  run setup.sh to start kong in different mode, currenly it supports dbless, db, and hybrid
-   2.  this script will use docker-compose.yaml file and pull latest image from the hub.
-  
+Follow these steps to set up your lab environment:
+
+1. **Run `setup.sh`:** This script will start Kong in different modes (DB-less, Traditional, Hybrid). The script uses `docker-compose.yaml` to pull the latest Kong image.
+2. **Verify the Setup:** Check the logs and ensure Kong is running in the desired mode.
+
+For each mode, Docker Compose will set up the necessary containers, networks, and volumes. Feel free to modify `docker-compose.yaml` to fit your specific needs.
+
 ## Kong Overview
 
-   <img width="660" alt="image" src="https://github.com/user-attachments/assets/a7670380-db66-4ccc-8e12-295863d32027">
+![Kong Architecture](path_to_image.png)
 
-   - **services:**
-     - All services run on a single node.
-     - Best for small-scale or testing environments.
-   
-   - **routes:**
-     - Services are distributed across multiple nodes.
-     - Offers high availability and scalability.
-   
-   - **plugin:**
-     - Separates control and data planes.
-     - Ideal for large, distributed environments.
+Kong Gateway offers several core features:
 
-   
+- **Services:** Manage your upstream services with ease. Ideal for small-scale or testing environments.
+- **Routes:** Route incoming requests to the correct upstream service. Supports high availability and scalability.
+- **Plugins:** Enhance your APIs with built-in and custom plugins. Perfect for large, distributed environments.
 
-   
-    
+Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
 
-
-
-
-
-
+---
