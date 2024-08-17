@@ -111,9 +111,9 @@ For each mode, Docker Compose will set up the necessary containers, networks, an
 
 Kong Gateway offers several core features:
 
-- **Services:** Manage your upstream services with ease. Ideal for small-scale or testing environments.
-- **Routes:** Route incoming requests to the correct upstream service. Supports high availability and scalability.
-- **Plugins:** Enhance your APIs with built-in and custom plugins. Perfect for large, distributed environments.
+- **Services:** Manage your upstream or backend with ease. You can setup host, port and timeout for your upstreams here. 
+- **Routes:** Route incoming requests to the correct upstream service. route has paths where you can apply regular expression to match dynamic routes. 
+- **Plugins:** Enhance your APIs with built-in and custom plugins such auth, logging, transform and monitoring purpose. 
 
 Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
 
