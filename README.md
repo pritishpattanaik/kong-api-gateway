@@ -120,21 +120,3 @@ Kong Gateway offers several core features:
 
 Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
 
----
-
-This README is now fully enhanced with the image links you provided. Ensure that these images are accessible and correctly linked in your GitHub repository. If you need further adjustments or have any other questions, feel free to ask!
-=======
-
-## Kong Overview
-
-![Kong Architecture](path_to_image.png)
-
-Kong Gateway offers several core features:
-
-- **Services:** Manage your upstream services with ease. Ideal for small-scale or testing environments.
-- **Routes:** Route incoming requests to the correct upstream service. Supports high availability and scalability.
-- **Plugins:** Enhance your APIs with built-in and custom plugins. Perfect for large, distributed environments.
-
-Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
-
----
