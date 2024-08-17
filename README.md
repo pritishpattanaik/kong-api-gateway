@@ -70,7 +70,11 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
 <details>
   <summary>DB-less Mode</summary>
 
+<<<<<<< HEAD
   ![DB-less Mode](./assets/dbless.png)
+=======
+  ![DB-less Mode](path_to_image.png)
+>>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
   
   In DB-less mode, configuration is provided through a declarative file in YAML or JSON format. This mode is ideal for simple setups where a database is unnecessary.
 </details>
@@ -78,7 +82,11 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
 <details>
   <summary>Traditional Mode</summary>
 
+<<<<<<< HEAD
   ![Traditional Mode](https://github.com/user-attachments/assets/5148256d-da13-46fa-a84c-27e4cf62ee09)
+=======
+  ![Traditional Mode](path_to_image.png)
+>>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
   
   In Traditional mode, Kong Gateway requires a database to store configured entities like routes, services, and plugins. PostgreSQL 10+ is supported.
 </details>
@@ -86,7 +94,11 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
 <details>
   <summary>Hybrid Mode</summary>
 
+<<<<<<< HEAD
   ![Hybrid Mode](https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673)
+=======
+  ![Hybrid Mode](path_to_image.png)
+>>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
   
   Hybrid mode separates the control plane and data plane, allowing distributed deployments without the need for a database on every node.
 </details>
@@ -99,6 +111,7 @@ Follow these steps to set up your lab environment:
 2. **Verify the Setup:** Check the logs and ensure Kong is running in the desired mode.
 
 For each mode, Docker Compose will set up the necessary containers, networks, and volumes. Feel free to modify `docker-compose.yaml` to fit your specific needs.
+<<<<<<< HEAD
 
 ## Kong Overview
 
@@ -115,3 +128,19 @@ Kong is designed to be flexible and scalable, making it suitable for a variety o
 ---
 
 This README is now fully enhanced with the image links you provided. Ensure that these images are accessible and correctly linked in your GitHub repository. If you need further adjustments or have any other questions, feel free to ask!
+=======
+
+## Kong Overview
+
+![Kong Architecture](path_to_image.png)
+
+Kong Gateway offers several core features:
+
+- **Services:** Manage your upstream services with ease. Ideal for small-scale or testing environments.
+- **Routes:** Route incoming requests to the correct upstream service. Supports high availability and scalability.
+- **Plugins:** Enhance your APIs with built-in and custom plugins. Perfect for large, distributed environments.
+
+Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
+
+---
+>>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
