@@ -3,6 +3,20 @@
 This is Kong API Gateway OSS tutorial to install and configure with docker. 
 
 
+### 6. **Quick Access Links**
+
+Add a table of contents at the beginning:
+
+```markdown
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Prerequesties](#Prerequesties)
+3. [Deployment Topology](#Deployment Topology)
+4. [Deployment Modes](#deployment-modes)
+5. [Lab Setup](#Lab Setup)
+6. [Kong Overview](#Kong Overview)
+
 
 ## Introduction 
 
@@ -10,7 +24,7 @@ In this tutorial, we will walk through with several installation options and dep
 
 Through a series of modules and lab exercises, the fundamental and advance concepts of Kong Gateway will be presented and put into practice by managing Kong Gateway, designing an API, and exposing the API through Kong Gateway. This course balances lecture, hands-on exercise
 
-## Setup instruction Guide 
+## Prerequesties 
 
 There are several prerequisites that are needed prior to running Kong Gateway on your local laptop/workstation. These are outlined below (with links to external web sites).
 
@@ -31,7 +45,7 @@ Setup and installation is divided into two Part.
 
    We use Docker as local containerized applications hence we will use docker to pull kong images in every mode.
 
-3. Kong Deployment topology
+## Deployment Topology
 
    Kong Gateway can be deployed in four different modes:
 
@@ -45,6 +59,15 @@ Setup and installation is divided into two Part.
     Each mode has benefits and limitations, so it is important to consider them carefully when deciding which mode to use to install Kong Gateway in production.
 
     The following sections briefly describe each mode.
+
+    ## Deployment Modes Comparison
+
+   | Mode              | Description                                 | Use Case                                |
+   |-------------------|---------------------------------------------|-----------------------------------------|
+   | **dbless**        | All services on one node                    | Simple setups, testing, or small-scale  |
+   | **traditional**   | Powered by Database and mutiple nodes       | Scalability                             |
+   | **Hybrid**        | Control plane and data plane separation     | Large, distributed environments         |
+
 
     ### DB-less mode
 
@@ -72,26 +95,27 @@ Setup and installation is divided into two Part.
 
     <img width="660" alt="image" src="https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673">
 
-4. Lab Setup
+## Lab Setup
 
    1.  run setup.sh to start kong in different mode, currenly it supports dbless, db, and hybrid
    2.  this script will use docker-compose.yaml file and pull latest image from the hub.
   
-5. Kong Gateway Overview
+## Kong Overview
 
    <img width="660" alt="image" src="https://github.com/user-attachments/assets/a7670380-db66-4ccc-8e12-295863d32027">
 
+   - **services:**
+     - All services run on a single node.
+     - Best for small-scale or testing environments.
+   
+   - **routes:**
+     - Services are distributed across multiple nodes.
+     - Offers high availability and scalability.
+   
+   - **plugin:**
+     - Separates control and data planes.
+     - Ideal for large, distributed environments.
 
-
-    • what is client ?
-
-    • what is service ?
-
-    • what is route ?
-
-    • what is plugin ?
-
-    • what is upstream ?
    
 
    
