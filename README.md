@@ -72,8 +72,7 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
 
 <<<<<<< HEAD
   ![DB-less Mode](./assets/dbless.png)
-=======
-  ![DB-less Mode](path_to_image.png)
+
 >>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
   
   In DB-less mode, configuration is provided through a declarative file in YAML or JSON format. This mode is ideal for simple setups where a database is unnecessary.
@@ -83,9 +82,7 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
   <summary>Traditional Mode</summary>
 
 <<<<<<< HEAD
-  ![Traditional Mode](https://github.com/user-attachments/assets/5148256d-da13-46fa-a84c-27e4cf62ee09)
-=======
-  ![Traditional Mode](path_to_image.png)
+  ![Traditional Mode](./assets/db.png)
 >>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
   
   In Traditional mode, Kong Gateway requires a database to store configured entities like routes, services, and plugins. PostgreSQL 10+ is supported.
@@ -95,10 +92,8 @@ Each mode has its own benefits and limitations. Choose the mode that best fits y
   <summary>Hybrid Mode</summary>
 
 <<<<<<< HEAD
-  ![Hybrid Mode](https://github.com/user-attachments/assets/24c67993-d896-40e1-ad2a-223f00767673)
-=======
-  ![Hybrid Mode](path_to_image.png)
->>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
+  ![Hybrid Mode](./assets/hrbrid.png)
+
   
   Hybrid mode separates the control plane and data plane, allowing distributed deployments without the need for a database on every node.
 </details>
@@ -143,4 +138,3 @@ Kong Gateway offers several core features:
 Kong is designed to be flexible and scalable, making it suitable for a variety of use cases, from small projects to enterprise-level deployments.
 
 ---
->>>>>>> 9934c8812e016f50f5fb4ffc4e8fd43c83e49a51
